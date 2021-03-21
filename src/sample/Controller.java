@@ -8,14 +8,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 public class Controller {
 
     @FXML
-    private TextField StudentId;
+    private AnchorPane LoginPage;
+
+    @FXML
+    private AnchorPane SigninPage;
 
     @FXML
     private PasswordField Password;
+
+    @FXML
+    private TextField StudentId;
 
     @FXML
     private Button SigininButton;
@@ -23,13 +30,20 @@ public class Controller {
     @FXML
     private Label Siginin_Page_Label;
 
+
     public void SigininButtonONation(ActionEvent event){
         if (StudentId.getText().isEmpty() && Password.getText().isEmpty()){
             Siginin_Page_Label.setText("Please Enter A Password And Username");
         }
         else{
-            Siginin_Page_Label.setText("both are entered");
+            System.out.println("works");
+            checkdetails();
+
         }
+    }
+    public void checkdetails(){
+        SigninPage.toBack();
+        LoginPage.toFront();
     }
 
 }
