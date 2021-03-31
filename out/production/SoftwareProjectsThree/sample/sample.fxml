@@ -7,18 +7,53 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="199.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../sample/British_University_in_Egypt (1).png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
-      <PasswordField fx:id="Password" layoutX="56.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
-      <Button fx:id="SigininButton" layoutX="42.0" layoutY="545.0" mnemonicParsing="false" onAction="#SigininButtonONation" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
-      <Label fx:id="Siginin_Page_Label" layoutX="517.0" layoutY="514.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+      <AnchorPane fx:id="LoginPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+         <children>
+            <AnchorPane prefHeight="121.0" prefWidth="1279.0" style="-fx-background-color: #104E8B;">
+               <children>
+                  <Button layoutX="914.0" layoutY="8.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="364.0" style="-fx-background-radius: 40; -fx-background-color: #ADD8E6; -fx-text-fill: #ff0000;" text="Clock In" textFill="RED">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Button>
+                  <Button layoutY="7.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="361.0" style="-fx-background-radius: 40; -fx-background-color: #ADD8E6; -fx-text-fill: #ff0000;" text="Time Table" textFill="#ea0909">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="460.0" layoutY="10.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="361.0" style="-fx-background-radius: 40; -fx-background-color: #ADD8E6; -fx-text-fill: #ff0000;" text="Calendar" textFill="RED">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="181.0" fitWidth="295.0" layoutX="967.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@British_University_in_Egypt%20(1).png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="15.0" layoutY="156.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;" />
+            <AnchorPane layoutX="15.0" layoutY="326.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;" />
+            <AnchorPane layoutX="15.0" layoutY="500.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
+            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/British_University_in_Egypt (1).png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
+            <Button fx:id="SigininButton" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#SigininButtonONation" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
+            <Label fx:id="Siginin_Page_Label" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+         </children>
+      </AnchorPane>
    </children>
 
 </AnchorPane>
