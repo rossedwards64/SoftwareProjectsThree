@@ -1,9 +1,8 @@
 package sample;
 
+import database.SQLiteDatabase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -25,22 +24,32 @@ public class Controller {
     private TextField StudentId;
 
     @FXML
-    private Button SigininButton;
+    private Button signInButtonOnAction;
 
     @FXML
-    private Label Siginin_Page_Label;
+    private Label signInLabel;
 
 
-    public void SigininButtonONation(ActionEvent event){
+    public void signInButtonOnAction(ActionEvent event){
         if (StudentId.getText().isEmpty() && Password.getText().isEmpty()){
-            Siginin_Page_Label.setText("Please Enter A Password And Username");
+            signInLabel.setText("Please Enter A Password And Username");
         }
         else{
-            System.out.println("works");
-            checkdetails();
-
+            String studentID = StudentId.getText();
+            String studentPassword = Password.getText();
+            System.out.println("Welcome," + studentID);
+            validateLogin(studentID, studentPassword);
         }
     }
+
+    public void validateLogin(String studentID, String studentPassword) {
+        boolean validate = SQLiteDatabase.verifyLogin(studentID, studentPassword);
+        if(validate) {
+            SigninPage.toBack();
+            LoginPage.toFront();
+        }
+    }
+
     public void checkdetails(){
         SigninPage.toBack();
         LoginPage.toFront();

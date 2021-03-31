@@ -50,8 +50,8 @@
                </image>
             </ImageView>
             <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
-            <Button fx:id="SigininButton" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#SigininButtonONation" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
-            <Label fx:id="Siginin_Page_Label" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
+            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
          </children>
       </AnchorPane>
    </children>
