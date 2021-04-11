@@ -9,10 +9,47 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import java.net.URI;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Controller {
 
     @FXML
     private AnchorPane LoginPage;
+
+    @FXML
+    private Button ClockIn;
+
+    @FXML
+    private Button ViewTimeTable;
+
+    @FXML
+    private Button ViewGrades;
+
+    @FXML
+    private Button AccountButton;
+
+    @FXML
+    private Button Campus;
+
+    @FXML
+    private Button StudentActivity;
+
+    @FXML
+    private Button StudentUnion;
+
+    @FXML
+    private Button VirtualTour;
+
+    @FXML
+    private AnchorPane AccountAnchorPane;
+
+    @FXML
+    private Button LogoutButton;
+
+    @FXML
+    private Button ChangePasswordButton;
 
     @FXML
     private AnchorPane SigninPage;
@@ -29,10 +66,19 @@ public class Controller {
     @FXML
     private Label signInLabel;
 
+    @FXML
+    private AnchorPane attendpage;
+
+    @FXML
+    private Button LeaveButton;
+
+    @FXML
+    private Button AttendButton;
+
 
     public void signInButtonOnAction(ActionEvent event){
         if (StudentId.getText().isEmpty() && Password.getText().isEmpty()){
-            signInLabel.setText("Please Enter A Password And Username");
+            signInLabel.setText("Enter a Password and Email");
         }
         else{
             String studentID = StudentId.getText();
@@ -54,5 +100,89 @@ public class Controller {
         SigninPage.toBack();
         LoginPage.toFront();
     }
+
+    @FXML
+    void Account (ActionEvent event){
+        AccountAnchorPane.toFront();
+    }
+    @FXML
+    void RecordAttendance(ActionEvent event){
+        String id = "80041633"; //For now this is static but we can retrive this
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");// time
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+        String Attendacemark = "On time"; //CAN BE LATE(5min past lesson time), Absence(Didnt attend)
+        System.out.println("Student id is " + id+ ", Date and time is " + dtf.format(now) + ", Student was " + Attendacemark);
+        LeaveButton.toFront();
+    }
+
+    @FXML
+    void RecordTimeLeft(ActionEvent event){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");// time
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("Student left at " + dtf.format((now)));
+        AttendButton.toFront();
+    }
+    @FXML
+    void Attendpage(ActionEvent event){
+        attendpage.toFront();
+    }
+    @FXML
+    void UniversityLogin (ActionEvent event){
+        try {
+
+            URI Campus= new URI("https://www.bue.edu.eg/pages/login-page/");
+            java.awt.Desktop.getDesktop().browse(Campus);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }}
+    @FXML
+    void CampusMap (ActionEvent event){
+        try {
+
+            URI Campus= new URI("https://www.bue.edu.eg/campus-map/");
+
+            java.awt.Desktop.getDesktop().browse(Campus);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }}
+
+    @FXML
+    void StudentUnionWebsite (ActionEvent event){
+        try {
+
+            URI Union= new URI("https://www.bue.edu.eg/student-activities-final/#1535914711582-d7b3101d-fe08");
+
+            java.awt.Desktop.getDesktop().browse(Union);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }}
+
+    @FXML
+    void StudentActivityWebsite (ActionEvent event){
+        try {
+
+            URI Activity= new URI("https://www.bue.edu.eg/student-activities-final/");
+
+            java.awt.Desktop.getDesktop().browse(Activity);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }}
+
+    @FXML
+    void VirtualTourWebsite (ActionEvent event){
+        try {
+
+            URI Campus= new URI("https://www.bue.edu.eg/virtual-tour/");
+
+            java.awt.Desktop.getDesktop().browse(Campus);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }}
 
 }
