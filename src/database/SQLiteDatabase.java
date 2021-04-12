@@ -37,4 +37,19 @@ public class SQLiteDatabase {
         }
         return false;
     }
+
+    public static String studentFName(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT StudentFName FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("StudentFName");
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
 }

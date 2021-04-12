@@ -107,12 +107,12 @@ public class Controller {
     }
     @FXML
     void RecordAttendance(ActionEvent event){
-        String id = "80041633"; //For now this is static but we can retrive this
+        String id = StudentId.getText();//For now this is static but we can retrive this
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");// time
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now));
         String Attendacemark = "On time"; //CAN BE LATE(5min past lesson time), Absence(Didnt attend)
-        System.out.println("Student id is " + id+ ", Date and time is " + dtf.format(now) + ", Student was " + Attendacemark);
+        System.out.println("Student id is " + id + ", Date and time is " + dtf.format(now) + ", Student was " + Attendacemark);
         LeaveButton.toFront();
     }
 
