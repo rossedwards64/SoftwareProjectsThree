@@ -9,6 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import javax.swing.*;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -74,6 +75,10 @@ public class Controller {
 
     @FXML
     private Button AttendButton;
+    @FXML
+    public void Logout(ActionEvent event){
+        SigninPage.toFront();
+    }
 
 
     public void signInButtonOnAction(ActionEvent event){

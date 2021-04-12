@@ -7,100 +7,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="646.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane fx:id="AccountAnchorPane" prefHeight="719.0" prefWidth="415.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <ImageView fitHeight="84.0" fitWidth="107.0" layoutX="150.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/User.png" />
-               </image>
-            </ImageView>
-            <Text fill="RED" layoutX="80.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Details" wrappingWidth="234.47250366210938">
-               <font>
-                  <Font size="33.0" />
-               </font>
-            </Text>
-            <Button fx:id="LogoutButton" layoutX="171.0" layoutY="657.0" mnemonicParsing="false" text="Logout" textFill="RED" />
-            <Text layoutX="20.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="104.11533462192779">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="20.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Second Name">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="20.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="20.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Course">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Button fx:id="ChangePasswordButton" layoutX="149.0" layoutY="599.0" mnemonicParsing="false" text="Change Password" />
-            <Text layoutX="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="PlacementForFName" layoutX="150.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placement for name">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="PlacementForSName" layoutX="160.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placement for name">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="PlacementForStudentNum" layoutX="150.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Num">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="PlacementForCourseName" layoutX="180.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Name">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Line endX="208.66665649414062" endY="202.333251953125" layoutX="208.0" layoutY="517.0" startX="207.33328247070312" startY="-517.0" strokeWidth="2.0" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="attendpage" prefHeight="719.0" prefWidth="1279.0" style="-fx-background-color: #42647F;">
-         <children>
-            <AnchorPane layoutX="101.0" layoutY="54.0" prefHeight="409.0" prefWidth="1064.0">
-               <children>
-                  <ImageView fitHeight="393.0" fitWidth="1047.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/map.PNG" />
-                     </image>
-                  </ImageView>
-                  <Circle fill="#dc0101" layoutX="560.0" layoutY="239.0" opacity="0.25" radius="64.0" stroke="BLACK" strokeType="INSIDE" />
-               </children>
-            </AnchorPane>
-            <Text fill="RED" layoutX="412.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Three Authorisation Methord">
-               <font>
-                  <Font name="Century" size="38.0" />
-               </font>
-            </Text>
-            <AnchorPane layoutX="400.0" layoutY="600.0" prefHeight="107.0" prefWidth="480.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
-               <children>
-                  <Button fx:id="LeaveButton" layoutX="-5.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RecordTimeLeft" opacity="0.0" prefHeight="107.0" prefWidth="488.0" text="Leave" />
-                  <Button fx:id="AttendButton" layoutX="-6.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RecordAttendance" opacity="0.0" prefHeight="107.0" prefWidth="487.0" text="Attend" />
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
@@ -183,7 +95,7 @@
                   </Text>
                   <Button fx:id="ChangeStudentPassword" layoutX="535.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="257.0" text="Button" />
                   <Button fx:id="CheckStudentAttendance" layoutX="904.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="124.0" text="Button" />
-                  <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
+                  <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#Logout" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
                </children>
             </AnchorPane>
             <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="39.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
@@ -191,6 +103,104 @@
                   <Image url="@../Image/British_University_in_Egypt.png" />
                </image>
             </ImageView>
+            <Text layoutX="92.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back [User]" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AccountAnchorPane" prefHeight="719.0" prefWidth="415.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="84.0" fitWidth="107.0" layoutX="150.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/User.png" />
+               </image>
+            </ImageView>
+            <Text fill="RED" layoutX="80.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Details" wrappingWidth="234.47250366210938">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Button fx:id="LogoutButton" layoutX="171.0" layoutY="657.0" mnemonicParsing="false" onAction="#Logout" text="Logout" textFill="RED" />
+            <Text layoutX="20.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="104.11533462192779">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="20.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Second Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="20.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Id">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="20.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Course">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="ChangePasswordButton" layoutX="149.0" layoutY="599.0" mnemonicParsing="false" text="Change Password" />
+            <Text layoutX="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="PlacementForFName" layoutX="150.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placement for name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="PlacementForSName" layoutX="160.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placement for name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="PlacementForStudentNum" layoutX="150.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Num">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="PlacementForCourseName" layoutX="180.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Line endX="208.66665649414062" endY="202.333251953125" layoutX="208.0" layoutY="517.0" startX="207.33328247070312" startY="-517.0" strokeWidth="2.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ResetStudent" layoutX="250.0" layoutY="178.0" prefHeight="472.0" prefWidth="747.0" style="-fx-background-color: #000000;">
+         <children>
+            <Text fill="#5500ff" layoutX="248.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password is automatically set to users first name" wrappingWidth="255.087890625" />
+            <AnchorPane layoutX="179.0" layoutY="58.0" prefHeight="334.0" prefWidth="366.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="80.0">
+               <children>
+                  <TextField fx:id="PasswordChangeId" layoutX="93.0" layoutY="48.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Id" />
+                  <TextField fx:id="PasswordChangeFN" layoutX="93.0" layoutY="117.0" prefHeight="25.0" prefWidth="201.0" promptText="Student First Name" />
+                  <TextField fx:id="PasswordChangeLn" layoutX="93.0" layoutY="170.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Last Name" />
+                  <Text fill="RED" layoutX="-3.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password" textAlignment="CENTER" wrappingWidth="391.99900954061644">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="changePassword" layoutX="87.0" layoutY="233.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="201.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <Text fill="RED" layoutX="686.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="XButton" layoutX="653.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="71.0" text="Button" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="attendpage" layoutY="120.0" prefHeight="604.0" prefWidth="1281.0" style="-fx-background-color: #42647F;">
+         <children>
+            <Button fx:id="LeaveButton" layoutX="464.0" layoutY="463.0" mnemonicParsing="false" onAction="#RecordTimeLeft" prefHeight="59.0" prefWidth="473.0" text="Leave" />
+            <ImageView fitHeight="354.0" fitWidth="1137.0" layoutX="273.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/map.PNG" />
+               </image>
+            </ImageView>
+            <Button fx:id="AttendButton" layoutX="461.0" layoutY="463.0" mnemonicParsing="false" onAction="#RecordAttendance" prefHeight="59.0" prefWidth="478.0" text="Attend" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="LoginPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
@@ -229,15 +239,15 @@
                   <Button fx:id="ViewTimeTable" layoutX="395.0" layoutY="36.0" mnemonicParsing="false" onAction="#UniversityLogin" opacity="0.0" prefHeight="58.0" prefWidth="170.0" text="Button" />
                   <Button fx:id="ViewGrades" layoutX="594.0" layoutY="31.0" mnemonicParsing="false" onAction="#UniversityLogin" opacity="0.0" prefHeight="58.0" prefWidth="138.0" text="Button" />
                   <Button fx:id="ClockIn" layoutX="767.0" layoutY="33.0" mnemonicParsing="false" onAction="#Attendpage" opacity="0.0" prefHeight="66.0" prefWidth="96.0" text="Button" />
-                  <Button fx:id="AccountButton" layoutX="896.0" layoutY="36.0" mnemonicParsing="false" opacity="0.0" prefHeight="58.0" prefWidth="166.0" text="Button" />
-                  <Button fx:id="Logout" layoutX="1122.0" layoutY="22.0" mnemonicParsing="false" opacity="0.0" prefHeight="77.0" prefWidth="115.0" text="Button" />
+                  <Button fx:id="AccountButton" layoutX="896.0" layoutY="36.0" mnemonicParsing="false" onAction="#Account" opacity="0.0" prefHeight="58.0" prefWidth="166.0" text="Button" />
+                  <Button fx:id="Logout" layoutX="1122.0" layoutY="22.0" mnemonicParsing="false" onAction="#Logout" opacity="0.0" prefHeight="77.0" prefWidth="115.0" text="Button" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="15.0" layoutY="156.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
                <children>
                   <Text layoutX="130.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance Percentage">
                      <font>
-                        <Font size="26.0" />
+                        <Font size="22.0" />
                      </font>
                   </Text>
                   <Text fill="#00f725" layoutX="200.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100%">
