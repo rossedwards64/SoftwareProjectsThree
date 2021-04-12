@@ -76,46 +76,161 @@
             <Line endX="208.66665649414062" endY="202.333251953125" layoutX="208.0" layoutY="517.0" startX="207.33328247070312" startY="-517.0" strokeWidth="2.0" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="attendpage" prefHeight="719.0" prefWidth="1279.0" style="-fx-background-color: #42647F;">
+         <children>
+            <AnchorPane layoutX="101.0" layoutY="54.0" prefHeight="409.0" prefWidth="1064.0">
+               <children>
+                  <ImageView fitHeight="393.0" fitWidth="1047.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/map.PNG" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="#dc0101" layoutX="560.0" layoutY="239.0" opacity="0.25" radius="64.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+            <Text fill="RED" layoutX="412.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Three Authorisation Methord">
+               <font>
+                  <Font name="Century" size="38.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="400.0" layoutY="600.0" prefHeight="107.0" prefWidth="480.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+               <children>
+                  <Button fx:id="LeaveButton" layoutX="-5.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RecordTimeLeft" opacity="0.0" prefHeight="107.0" prefWidth="488.0" text="Leave" />
+                  <Button fx:id="AttendButton" layoutX="-6.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RecordAttendance" opacity="0.0" prefHeight="107.0" prefWidth="487.0" text="Attend" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
+            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/British_University_in_Egypt.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
+            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
+            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AdminPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+         <children>
+            <AnchorPane layoutX="43.0" layoutY="158.0" prefHeight="467.0" prefWidth="615.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Line endX="335.3333740234375" endY="1.52587890625E-5" layoutX="278.0" layoutY="88.0" startX="-278.0000305175781" startY="1.52587890625E-5" />
+                  <Line endX="-83.72299194335938" endY="285.50006103515625" layoutX="190.0" layoutY="179.0" startX="-83.72300720214844" startY="-179.00001525878906" />
+                  <Line endX="-104.74114990234375" endY="200.50006103515625" layoutX="307.0" layoutY="264.0" startX="-104.74113464355469" startY="-264.0" />
+                  <Line endX="-63.00006103515625" endY="173.50006103515625" layoutX="371.0" layoutY="291.0" startX="-63.00006103515625" startY="-291.0" />
+                  <Line endX="43.418792724609375" endY="199.50006103515625" layoutX="370.0" layoutY="264.0" startX="43.4188232421875" startY="-264.0" />
+                  <Line endX="182.65545654296875" endY="200.50006103515625" layoutX="325.0" layoutY="264.0" startX="182.655517578125" startY="-264.0" />
+                  <Line endX="350.66668701171875" layoutX="264.0" layoutY="183.0" startX="-264.0000305175781" />
+                  <Line endX="351.99993896484375" endY="2.666656494140625" layoutX="264.0" layoutY="267.0" startX="-264.0000305175781" startY="2.666656494140625" />
+                  <Line endX="352.6666259765625" endY="3.0517578125E-5" layoutX="278.0" layoutY="352.0" startX="-278.0000305175781" startY="3.0517578125E-5" />
+                  <Line endX="350.0" layoutX="278.0" layoutY="432.0" startX="-278.0000305175781" />
+                  <Text layoutX="6.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="98.27942559385338" />
+                  <Line endX="343.333251953125" endY="-3.0517578125E-5" layoutX="278.0" layoutY="137.0" startX="-278.0000305175781" startY="-3.0517578125E-5" />
+                  <Line endX="344.66668701171875" endY="-3.0517578125E-5" layoutX="278.0" layoutY="230.0" startX="-278.0000305175781" startY="-3.0517578125E-5" />
+                  <Line endX="346.0" layoutX="278.0" layoutY="307.0" startX="-278.0000305175781" />
+                  <Line endX="351.3333740234375" endY="6.103515625E-5" layoutX="278.0" layoutY="394.0" startX="-278.0000305175781" startY="6.103515625E-5" />
+                  <Line endX="356.666748046875" endY="6.103515625E-5" layoutX="270.0" layoutY="464.0" startX="-270.0000305175781" startY="6.103515625E-5" />
+                  <Text layoutX="144.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" />
+                  <Text layoutX="249.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" />
+                  <Text layoutX="350.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" />
+                  <Text layoutX="433.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" />
+                  <Text layoutX="544.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" />
+                  <Text layoutX="44.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9;00" />
+                  <Text layoutX="55.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10;00" />
+                  <Text layoutX="44.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11:00" />
+                  <Text layoutX="44.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12;00" />
+                  <Text layoutX="44.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13;00" />
+                  <Text layoutX="44.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14;00" />
+                  <Text layoutX="55.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15;00" />
+                  <Text layoutX="44.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16;00" />
+                  <Text layoutX="47.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17;00" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="856.0" layoutY="161.0" prefHeight="527.0" prefWidth="380.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#b2aaaa" layoutX="-2.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Data Avaliable " textAlignment="CENTER" wrappingWidth="381.01873779296875">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="3.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications Of Student Attendance" textAlignment="CENTER" wrappingWidth="366.47613525390625">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="-7.0" prefHeight="117.0" prefWidth="1288.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Text layoutX="902.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="536.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Student Passwords">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="1154.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="ChangeStudentPassword" layoutX="535.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="257.0" text="Button" />
+                  <Button fx:id="CheckStudentAttendance" layoutX="904.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="124.0" text="Button" />
+                  <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="39.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@British_University_in_Egypt%20(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="LoginPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
          <children>
             <AnchorPane prefHeight="121.0" prefWidth="1279.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <AnchorPane layoutX="991.0" layoutY="12.0" prefHeight="97.0" prefWidth="259.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;">
-                     <children>
-                        <Text fill="#1100ff" layoutX="50.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mark In Attendance">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <Button fx:id="ClockIn" mnemonicParsing="false" onAction="#Attendpage" opacity="0.0" prefHeight="101.0" prefWidth="259.0" text="Button" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="150.0" layoutY="12.0" prefHeight="97.0" prefWidth="259.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;">
-                     <children>
-                        <Text fill="#1702ff" layoutX="60.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Time Table">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <Button fx:id="ViewTimeTable" mnemonicParsing="false" onAction="#UniversityLogin" opacity="0.0" prefHeight="101.0" prefWidth="264.0" text="Button" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="565.0" layoutY="12.0" prefHeight="97.0" prefWidth="259.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;">
-                     <children>
-                        <Text fill="#1100ff" layoutX="80.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Grades">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Text>
-                        <Button fx:id="ViewGrades" mnemonicParsing="false" onAction="#UniversityLogin" opacity="0.0" prefHeight="104.0" prefWidth="262.0" text="Button" />
-                     </children>
-                  </AnchorPane>
-                  <ImageView fitHeight="84.0" fitWidth="107.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Image/User.png" />
+                        <Image url="@British_University_in_Egypt%20(1).png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="AccountButton" layoutX="13.0" layoutY="18.0" mnemonicParsing="false" onAction="#Account" opacity="0.0" prefHeight="91.0" prefWidth="95.0" text="Button" />
+                  <Text layoutX="402.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View TimeTable">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="600.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Grades">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font></Text>
+                  <Text layoutX="780.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attend">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="1150.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="900.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Details">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="ViewTimeTable" layoutX="395.0" layoutY="36.0" mnemonicParsing="false" onAction="#UniversityLogin" opacity="0.0" prefHeight="58.0" prefWidth="170.0" text="Button" />
+                  <Button fx:id="ViewGrades" layoutX="594.0" layoutY="31.0" mnemonicParsing="false" onAction="#UniversityLogin" opacity="0.0" prefHeight="58.0" prefWidth="138.0" text="Button" />
+                  <Button fx:id="ClockIn" layoutX="767.0" layoutY="33.0" mnemonicParsing="false" onAction="#Attendpage" opacity="0.0" prefHeight="66.0" prefWidth="96.0" text="Button" />
+                  <Button fx:id="AccountButton" layoutX="896.0" layoutY="36.0" mnemonicParsing="false" opacity="0.0" prefHeight="58.0" prefWidth="166.0" text="Button" />
+                  <Button fx:id="Logout" layoutX="1122.0" layoutY="22.0" mnemonicParsing="false" opacity="0.0" prefHeight="77.0" prefWidth="115.0" text="Button" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="15.0" layoutY="156.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
@@ -188,20 +303,6 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="1000.0" layoutY="450.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/3dbanner-min-300x198.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Tour" wrappingWidth="148.4036386222116">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
             <AnchorPane layoutX="700.0" layoutY="450.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
                <children>
                   <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
@@ -220,44 +321,21 @@
             <Button fx:id="StudentActivity" layoutX="1001.0" layoutY="199.0" mnemonicParsing="false" onAction="#StudentActivityWebsite" opacity="0.0" prefHeight="204.0" prefWidth="213.0" text="Button" />
             <Button fx:id="StudentUnion" layoutX="700.0" layoutY="450.0" mnemonicParsing="false" onAction="#StudentUnionWebsite" opacity="0.0" prefHeight="200.0" prefWidth="216.0" text="Button" />
             <Button fx:id="VirtualTour" layoutX="999.0" layoutY="447.0" mnemonicParsing="false" onAction="#VirtualTourWebsite" opacity="0.0" prefHeight="204.0" prefWidth="217.0" text="Button" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="attendpage" prefHeight="719.0" prefWidth="1279.0" style="-fx-background-color: #42647F;">
-         <children>
-            <AnchorPane layoutX="101.0" layoutY="54.0" prefHeight="409.0" prefWidth="1064.0">
+            <AnchorPane layoutX="1000.0" layoutY="450.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
                <children>
-                  <ImageView fitHeight="393.0" fitWidth="1047.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Image/map.PNG" />
+                        <Image url="@../Image/3dbanner-min-300x198.png" />
                      </image>
                   </ImageView>
-                  <Circle fill="#dc0101" layoutX="560.0" layoutY="239.0" opacity="0.25" radius="64.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Tour" wrappingWidth="148.4036386222116">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
-            <Text fill="RED" layoutX="412.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Three Authorisation Methord">
-               <font>
-                  <Font name="Century" size="38.0" />
-               </font>
-            </Text>
-            <AnchorPane layoutX="400.0" layoutY="600.0" prefHeight="107.0" prefWidth="480.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
-               <children>
-                  <Button fx:id="LeaveButton" layoutX="-5.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RecordTimeLeft" opacity="0.0" prefHeight="107.0" prefWidth="488.0" text="Leave" />
-                  <Button fx:id="AttendButton" layoutX="-6.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RecordAttendance" opacity="0.0" prefHeight="107.0" prefWidth="487.0" text="Attend" />
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
-            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/British_University_in_Egypt.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
-            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
-            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+            <Text layoutX="103.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the BUE logo to see account details" />
          </children>
       </AnchorPane>
    </children>
