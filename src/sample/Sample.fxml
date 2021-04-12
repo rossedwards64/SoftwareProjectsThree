@@ -188,7 +188,7 @@
             </AnchorPane>
             <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="39.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@British_University_in_Egypt%20(1).png" />
+                  <Image url="@../Image/British_University_in_Egypt.png" />
                </image>
             </ImageView>
          </children>
@@ -199,7 +199,7 @@
                <children>
                   <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@British_University_in_Egypt%20(1).png" />
+                        <Image url="@../Image/British_University_in_Egypt.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="402.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View TimeTable">
