@@ -347,7 +347,7 @@
                         <Font name="System Bold Italic" size="22.0" />
                      </font>
                   </Text>
-                  <Button fx:id="absentSubmit" layoutX="153.0" layoutY="225.0" mnemonicParsing="false" text="Submit" />
+                  <Button fx:id="absentSubmit" layoutX="153.0" layoutY="225.0" mnemonicParsing="false" onAction="#submitAbsent" text="Submit" />
                </children>
             </AnchorPane>
             <Text fill="RED" layoutX="686.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
