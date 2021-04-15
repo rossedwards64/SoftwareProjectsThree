@@ -23,9 +23,10 @@ public class SQLiteDatabase {
             pstmt.setString(1, studentID);
             pstmt.setString(2, studentPassword);
             ResultSet result = pstmt.executeQuery();
-
             if(result.next()) {
                 System.out.println("Student ID and password are correct");
+                result.close();
+                pstmt.close();
                 conn.close();
                 return true;
             } else {
@@ -38,6 +39,23 @@ public class SQLiteDatabase {
         return false;
     }
 
+    public static String studentID(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT StudentID FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("StudentID");
+            result.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
+
     public static String studentFName(String studentID) {
         Connection conn = connect();
         try {
@@ -46,6 +64,76 @@ public class SQLiteDatabase {
             pstmt.setString(1, studentID);
             ResultSet result = pstmt.executeQuery();
             studentID = result.getString("StudentFName");
+            result.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
+
+    public static String studentLName(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT StudentLName FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("StudentLName");
+            result.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
+
+    public static String studentCourse(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT StudentCourse FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("StudentCourse");
+            result.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
+
+    public static String studentAttendance(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT StudentAttendance FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("StudentAttendance");
+            result.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
+
+    public static String studentPassword(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT StudentPassword FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("StudentPassword");
+            result.close();
+            pstmt.close();
             conn.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

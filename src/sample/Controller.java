@@ -1,6 +1,7 @@
 package sample;
 
 import database.SQLiteDatabase;
+import student.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,10 +10,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -133,15 +137,47 @@ public class Controller {
     void Account (ActionEvent event){
         AccountAnchorPane.toFront();
     }
+
     @FXML
     void RecordAttendance(ActionEvent event){
+        Student student = loginInfo();
         String id = StudentId.getText();//For now this is static but we can retrive this
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");// time
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now));
         String Attendacemark = "On time"; //CAN BE LATE(5min past lesson time), Absence(Didnt attend)
-        System.out.println("Student id is " + id + ", Date and time is " + dtf.format(now) + ", Student was " + Attendacemark);
+        System.out.println("Student id is " + student.getStudentID() + ", Date and time is " + dtf.format(now) + ", Student was " + Attendacemark);
+
+        ArrayList<String> attendanceInfo = new ArrayList();
+        attendanceInfo.add(student.getStudentID());
+        attendanceInfo.add(student.getStudentFName());
+        attendanceInfo.add(student.getStudentLName());
+        attendanceInfo.add(student.getStudentCourse());
+        attendanceInfo.add(student.getStudentAttendance());
+        String attendanceInfoString = String.join(",", attendanceInfo);
+
+        BufferedWriter writer;
+        try {
+            writer = new BufferedWriter(new FileWriter("attendance_info.csv", true));
+            writer.write(attendanceInfoString);
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         LeaveButton.toFront();
+    }
+
+    public Student loginInfo() {
+        String studentID = StudentId.getText();
+        String studentFName = SQLiteDatabase.studentFName(studentID);
+        String studentLName = SQLiteDatabase.studentLName(studentID);
+        String studentPassword = SQLiteDatabase.studentPassword(studentID);
+        String studentCourse = SQLiteDatabase.studentCourse(studentID);
+        String studentAttendance = SQLiteDatabase.studentAttendance(studentID);
+
+        return new Student(studentID, studentFName, studentLName, studentPassword, studentCourse, studentAttendance);
     }
 
     @FXML
@@ -151,10 +187,12 @@ public class Controller {
         System.out.println("Student left at " + dtf.format((now)));
         AttendButton.toFront();
     }
+
     @FXML
     void Attendpage(ActionEvent event){
         attendpage.toFront();
     }
+
     @FXML
     void UniversityLogin (ActionEvent event){
         try {
@@ -164,7 +202,8 @@ public class Controller {
         } catch (Exception e) {
 
             e.printStackTrace();
-        }}
+        }
+    }
     @FXML
     void CampusMap (ActionEvent event){
         try {
@@ -175,7 +214,8 @@ public class Controller {
         } catch (Exception e) {
 
             e.printStackTrace();
-        }}
+        }
+    }
 
     @FXML
     void StudentUnionWebsite (ActionEvent event){
@@ -187,7 +227,8 @@ public class Controller {
         } catch (Exception e) {
 
             e.printStackTrace();
-        }}
+        }
+    }
 
     @FXML
     void StudentActivityWebsite (ActionEvent event){
@@ -199,7 +240,8 @@ public class Controller {
         } catch (Exception e) {
 
             e.printStackTrace();
-        }}
+        }
+    }
 
     @FXML
     void VirtualTourWebsite (ActionEvent event){
@@ -211,6 +253,7 @@ public class Controller {
         } catch (Exception e) {
 
             e.printStackTrace();
-        }}
+        }
+    }
 
 }
