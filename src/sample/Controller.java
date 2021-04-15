@@ -107,6 +107,29 @@ public class Controller {
         absentWindow.toBack();
     }
 
+    @FXML
+    public void submitAbsent(ActionEvent event){
+        Student student = loginInfo();
+        ArrayList<String> absentString = new ArrayList();
+        absentString.add(absentReason.getText());
+        absentString.add(student.getStudentFName());
+        absentString.add(student.getStudentLName());
+
+        String absentList = String.join(",", absentString);
+
+        BufferedWriter writer;
+        try {
+            writer = new BufferedWriter(new FileWriter("absentReasons.csv", true));
+            writer.write(absentList);
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        absentWindow.toBack();
+        absentReason.clear();
+    }
+
 
     public void signInButtonOnAction(ActionEvent event){
         if (StudentId.getText().isEmpty() && Password.getText().isEmpty()){
