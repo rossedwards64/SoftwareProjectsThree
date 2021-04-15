@@ -75,9 +75,32 @@ public class Controller {
 
     @FXML
     private Button AttendButton;
+
+    @FXML
+    private Button XButton;
+
+    @FXML
+    private AnchorPane absentWindow;
+    @FXML
+    private TextField absentReason;
+    @FXML
+    private Button absentSubmit;
+    @FXML
+    private Button absentButton;
+
     @FXML
     public void Logout(ActionEvent event){
         SigninPage.toFront();
+    }
+
+    @FXML
+    public void recordAbsent(ActionEvent event){
+        absentWindow.toFront();
+    }
+
+    @FXML
+    public void closeWindow(ActionEvent event){
+        absentWindow.toBack();
     }
 
 
