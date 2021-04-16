@@ -1,13 +1,12 @@
 package sample;
 
 import database.SQLiteDatabase;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.*;
 import student.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.BufferedWriter;
@@ -86,11 +85,17 @@ public class Controller {
     @FXML
     private AnchorPane absentWindow;
     @FXML
-    private TextField absentReason;
+    private ChoiceBox absentReason;
+    @FXML
+    private TextArea OtherReason;
     @FXML
     private Button absentSubmit;
     @FXML
     private Button absentButton;
+
+    ObservableList<String> choices = FXCollections.observableArrayList("Sick", "Late", "Medical", "Family", "Job" , "Commitment", "Other");
+
+
 
     @FXML
     public void Logout(ActionEvent event){
@@ -99,6 +104,7 @@ public class Controller {
 
     @FXML
     public void recordAbsent(ActionEvent event){
+        absentReason.setItems(choices);
         absentWindow.toFront();
     }
 
@@ -111,11 +117,18 @@ public class Controller {
     public void submitAbsent(ActionEvent event){
         Student student = loginInfo();
         ArrayList<String> absentString = new ArrayList();
-        absentString.add(absentReason.getText());
+        absentString.add(student.getStudentID());
         absentString.add(student.getStudentFName());
         absentString.add(student.getStudentLName());
+        absentString.add(student.getStudentCourse());
+        String value = (String) absentReason.getValue();
+        if (value.equals("Other")){
+            value = OtherReason.getText();
+        }
+        absentString.add(value);
 
-        String absentList = String.join(",", absentString);
+
+        String absentList = String.join("," , absentString);
 
         BufferedWriter writer;
         try {
@@ -126,8 +139,6 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        absentWindow.toBack();
-        absentReason.clear();
     }
 
 
