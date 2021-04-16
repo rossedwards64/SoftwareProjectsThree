@@ -77,19 +77,6 @@
             <Line endX="208.66665649414062" endY="202.333251953125" layoutX="208.0" layoutY="517.0" startX="207.33328247070312" startY="-517.0" strokeWidth="2.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
-            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/British_University_in_Egypt.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
-            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
-            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="AdminPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
          <children>
             <AnchorPane layoutX="43.0" layoutY="158.0" prefHeight="467.0" prefWidth="615.0" style="-fx-background-color: #FFFFFF;">
@@ -168,6 +155,58 @@
                </image>
             </ImageView>
             <Text layoutX="92.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back [User]" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="absentWindow" layoutX="10.0" layoutY="130.0" prefHeight="604.0" prefWidth="1281.0" style="-fx-background-color: #42647F;">
+         <children>
+            <Text fill="RED" layoutX="380.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill the form">
+               <font>
+                  <Font name="System Bold" size="62.0" />
+               </font>
+            </Text>
+            <Text layoutX="504.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ChoiceBox fx:id="absentReason" layoutX="553.0" layoutY="167.0" prefHeight="27.0" prefWidth="204.0" />
+            <Button fx:id="absentButton" layoutX="402.0" layoutY="511.0" mnemonicParsing="false" onAction="#submitAbsent" prefHeight="37.0" prefWidth="503.0" text="Press Here to send" />
+            <Text layoutX="550.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select A Reason Why U cannot Attend" />
+            <Text layoutX="575.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If other please select a reason" />
+            <TextArea fx:id="OtherReason" layoutX="555.0" layoutY="243.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ResetStudent" layoutX="250.0" layoutY="178.0" prefHeight="472.0" prefWidth="747.0" style="-fx-background-color: #000000;">
+         <children>
+            <Text fill="#5500ff" layoutX="248.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password is automatically set to users first name" wrappingWidth="255.087890625" />
+            <AnchorPane layoutX="179.0" layoutY="58.0" prefHeight="334.0" prefWidth="366.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="80.0">
+               <children>
+                  <TextField fx:id="PasswordChangeId" layoutX="93.0" layoutY="48.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Id" />
+                  <TextField fx:id="PasswordChangeFN" layoutX="93.0" layoutY="117.0" prefHeight="25.0" prefWidth="201.0" promptText="Student First Name" />
+                  <TextField fx:id="PasswordChangeLn" layoutX="93.0" layoutY="170.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Last Name" />
+                  <Text fill="RED" layoutX="-3.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password" textAlignment="CENTER" wrappingWidth="391.99900954061644">
+                     <font>
+                        <Font name="System Bold Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="changePassword" layoutX="87.0" layoutY="233.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="201.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <Text fill="RED" layoutX="686.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="XButton" layoutX="653.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="71.0" text="Button" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
+            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/British_University_in_Egypt.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
+            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
+            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="LoginPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
@@ -315,31 +354,7 @@
             <Text layoutX="103.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the BUE logo to see account details" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="ResetStudent" layoutX="250.0" layoutY="178.0" prefHeight="472.0" prefWidth="747.0" style="-fx-background-color: #000000;">
-         <children>
-            <Text fill="#5500ff" layoutX="248.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password is automatically set to users first name" wrappingWidth="255.087890625" />
-            <AnchorPane layoutX="179.0" layoutY="58.0" prefHeight="334.0" prefWidth="366.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="80.0">
-               <children>
-                  <TextField fx:id="PasswordChangeId" layoutX="93.0" layoutY="48.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Id" />
-                  <TextField fx:id="PasswordChangeFN" layoutX="93.0" layoutY="117.0" prefHeight="25.0" prefWidth="201.0" promptText="Student First Name" />
-                  <TextField fx:id="PasswordChangeLn" layoutX="93.0" layoutY="170.0" prefHeight="25.0" prefWidth="201.0" promptText="Student Last Name" />
-                  <Text fill="RED" layoutX="-3.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password" textAlignment="CENTER" wrappingWidth="391.99900954061644">
-                     <font>
-                        <Font name="System Bold Italic" size="22.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="changePassword" layoutX="87.0" layoutY="233.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="201.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <Text fill="RED" layoutX="686.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Button fx:id="XButton" layoutX="653.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="71.0" text="Button" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="attendpage" layoutY="120.0" prefHeight="604.0" prefWidth="1281.0" style="-fx-background-color: #42647F;">
+      <AnchorPane fx:id="attendpage" layoutY="130.0" prefHeight="589.0" prefWidth="1293.0" style="-fx-background-color: #42647F;">
          <children>
             <Button fx:id="LeaveButton" layoutX="464.0" layoutY="463.0" mnemonicParsing="false" onAction="#RecordTimeLeft" prefHeight="59.0" prefWidth="473.0" text="Leave" />
             <ImageView fitHeight="354.0" fitWidth="1137.0" layoutX="273.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
@@ -348,27 +363,12 @@
                </image>
             </ImageView>
             <Button fx:id="AttendButton" layoutX="461.0" layoutY="463.0" mnemonicParsing="false" onAction="#RecordAttendance" prefHeight="59.0" prefWidth="478.0" text="Attend" />
-            <Text fill="RED" layoutX="580.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absent or cannot make it? click here">
+            <Text fill="RED" layoutX="639.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absent or cannot make it? click here">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
-            <Button fx:id="AbsentWindowButton" layoutX="572.0" layoutY="543.0" mnemonicParsing="false" onAction="#recordAbsent" opacity="0.0" prefHeight="29.0" prefWidth="254.0" text="Button" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="absentWindow" layoutX="10.0" layoutY="130.0" prefHeight="604.0" prefWidth="1281.0" style="-fx-background-color: #42647F;">
-         <children>
-            <Text fill="RED" layoutX="380.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill the form">
-               <font>
-                  <Font name="System Bold" size="62.0" />
-               </font>
-            </Text>
-            <Text layoutX="504.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <ChoiceBox fx:id="absentReason" layoutX="592.0" layoutY="150.0" prefWidth="150.0" />
-            <Button fx:id="absentButton" layoutX="55.0" layoutY="511.0" mnemonicParsing="false" onAction="#submitAbsent" prefHeight="37.0" prefWidth="1116.0" text="Button" />
-            <Text layoutX="550.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select A Reason Why U cannot Attend" />
-            <Text layoutX="644.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If other please select a reason" />
-            <TextArea fx:id="OtherReason" layoutX="555.0" layoutY="243.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="AbsentWindowButton" layoutX="555.0" layoutY="421.0" mnemonicParsing="false" onAction="#recordAbsent" opacity="0.0" prefHeight="29.0" prefWidth="342.0" text="Button" />
          </children>
       </AnchorPane>
    </children>

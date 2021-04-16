@@ -196,6 +196,19 @@
             <Button fx:id="XButton" layoutX="653.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="71.0" text="Button" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
+            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/British_University_in_Egypt.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
+            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
+            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="LoginPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
          <children>
             <AnchorPane layoutY="-2.0" prefHeight="123.0" prefWidth="1293.0" style="-fx-background-color: #FFFFFF;">
@@ -341,7 +354,7 @@
             <Text layoutX="103.0" layoutY="695.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the BUE logo to see account details" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="attendpage" layoutY="130.0" prefHeight="604.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+      <AnchorPane fx:id="attendpage" layoutY="130.0" prefHeight="589.0" prefWidth="1293.0" style="-fx-background-color: #42647F;">
          <children>
             <Button fx:id="LeaveButton" layoutX="464.0" layoutY="463.0" mnemonicParsing="false" onAction="#RecordTimeLeft" prefHeight="59.0" prefWidth="473.0" text="Leave" />
             <ImageView fitHeight="354.0" fitWidth="1137.0" layoutX="273.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
@@ -350,25 +363,12 @@
                </image>
             </ImageView>
             <Button fx:id="AttendButton" layoutX="461.0" layoutY="463.0" mnemonicParsing="false" onAction="#RecordAttendance" prefHeight="59.0" prefWidth="478.0" text="Attend" />
-            <Text fill="RED" layoutX="580.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absent or cannot make it? click here">
+            <Text fill="RED" layoutX="639.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absent or cannot make it? click here">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
-            <Button fx:id="AbsentWindowButton" layoutX="572.0" layoutY="543.0" mnemonicParsing="false" onAction="#recordAbsent" opacity="0.0" prefHeight="29.0" prefWidth="254.0" text="Button" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
-            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/British_University_in_Egypt.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
-            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
-            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
+            <Button fx:id="AbsentWindowButton" layoutX="555.0" layoutY="421.0" mnemonicParsing="false" onAction="#recordAbsent" opacity="0.0" prefHeight="29.0" prefWidth="342.0" text="Button" />
          </children>
       </AnchorPane>
    </children>
