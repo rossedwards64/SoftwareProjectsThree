@@ -140,4 +140,21 @@ public class SQLiteDatabase {
         }
         return studentID;
     }
+
+    public static String studentStatus(String studentID) {
+        Connection conn = connect();
+        try {
+            String SQL = "SELECT Status FROM StudentInfo WHERE StudentID = ?";
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, studentID);
+            ResultSet result = pstmt.executeQuery();
+            studentID = result.getString("Status");
+            result.close();
+            pstmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return studentID;
+    }
 }

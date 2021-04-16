@@ -10,13 +10,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Controller {
 
@@ -93,6 +93,23 @@ public class Controller {
     private Button absentButton;
 
     @FXML
+    private AnchorPane studentTabs;
+    @FXML
+    private AnchorPane teacherTabs;
+    @FXML
+    private AnchorPane homePage;
+    @FXML
+    private AnchorPane attendancePage;
+    @FXML
+    private Label absentName;
+    @FXML
+    private Label absentAttendance;
+    @FXML
+    private Label absentReasonTeacher;
+    @FXML
+    private Label reasonID;
+
+    @FXML
     public void Logout(ActionEvent event){
         SigninPage.toFront();
     }
@@ -105,15 +122,141 @@ public class Controller {
     @FXML
     public void closeWindow(ActionEvent event){
         absentWindow.toBack();
+        attendancePage.toBack();
+
     }
 
     @FXML
+    public void markAsRead(ActionEvent event){
+        Student student = loginInfo();
+        String filePath = "absentReasons.csv";
+        String removeTerm = reasonID.getText();
+        removeRecord(filePath, removeTerm, 5);
+        String searchTerm = student.getStudentCourse();
+        String[] studentData = (fetchStudentData(searchTerm, filePath));
+        try{
+            absentName.setText(studentData[0]);
+            absentAttendance.setText(studentData[1]);
+            absentReasonTeacher.setText(studentData[2]);
+            System.out.println(studentData[3]);
+            reasonID.setText(studentData[4]);
+        }
+        catch (Exception var15){
+        }
+
+    }
+
+    public void removeRecord(String filePath, String removeTerm, int positionOfTerm) {
+        int position = positionOfTerm - 1;
+        String tempFile = "temp.csv";
+        File oldFile = new File(filePath);
+        File newFile = new File(tempFile);
+
+        try {
+            FileWriter fw = new FileWriter(tempFile, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            FileReader fr = new FileReader(filePath);
+            BufferedReader br = new BufferedReader(fr);
+
+            String currentLine;
+            while((currentLine = br.readLine()) != null) {
+                String[] data = currentLine.split(",");
+                System.out.println(data[position]);
+                System.out.println(removeTerm);
+                String ID = data[position];
+                if (!ID.equals(String.valueOf(removeTerm))) {
+                    pw.println(currentLine);
+                    System.out.println("not same");
+                }
+            }
+
+            pw.flush();
+            pw.close();
+            fr.close();
+            br.close();
+            bw.close();
+            fw.close();
+            oldFile.delete();
+            File dump = new File(filePath);
+            newFile.renameTo(dump);
+        } catch (Exception var15) {
+            var15.printStackTrace();
+        }
+
+    }
+
+    public static String[] fetchStudentData(String searchTerm, String filePath){
+        ArrayList<String> records = new ArrayList<String>();
+
+        String name = ""; String attendance = ""; String reason = ""; String course = ""; String status = "";
+        boolean found = false;
+
+        try {
+            Scanner x;
+            x = new Scanner(new File(filePath));
+            x.useDelimiter("[,\n]");
+
+            while (x.hasNext() && !found){
+                name = x.next();
+                attendance = x.next();
+                reason = x.next();
+                course = x.next();
+                status = x.next();
+
+                if (course.equals(searchTerm)){
+                    System.out.println(course);
+                    System.out.println(searchTerm);
+                    records.add(name);
+                    records.add(attendance);
+                    records.add(reason);
+                    records.add(course);
+                    records.add(status);
+                    found = true;
+
+                }
+            }
+            x.close();
+        }
+        catch (Exception e){
+            System.out.println("Error");
+        }
+
+        String[] studentData = new String[records.size()];
+        records.toArray(studentData);
+        return studentData;
+    }
+
+    public void viewAttendance(ActionEvent event){
+        Student student = loginInfo();
+        attendancePage.toFront();
+        String searchTerm = student.getStudentCourse();
+        String filePath = "absentReasons.csv";
+        String[] studentData = (fetchStudentData(searchTerm, filePath));
+        try{
+            absentName.setText(studentData[0]);
+            absentAttendance.setText(studentData[1]);
+            absentReasonTeacher.setText(studentData[2]);
+            System.out.println(studentData[3]);
+            reasonID.setText(studentData[4]);
+        }
+        catch (Exception var15){
+        }
+    }
+
     public void submitAbsent(ActionEvent event){
         Student student = loginInfo();
         ArrayList<String> absentString = new ArrayList();
+        absentString.add((student.getStudentFName()) + " " + (student.getStudentLName()));
+        absentString.add(student.getStudentAttendance());
         absentString.add(absentReason.getText());
-        absentString.add(student.getStudentFName());
-        absentString.add(student.getStudentLName());
+        absentString.add(student.getStudentCourse());
+
+        Random r = new Random();
+        int ID = r.nextInt((1000000 - 0) + 1) + 0;
+
+
+        absentString.add(String.valueOf(ID));
 
         String absentList = String.join(",", absentString);
 
@@ -148,6 +291,14 @@ public class Controller {
         if(validate) {
             SigninPage.toBack();
             LoginPage.toFront();
+            homePage.toFront();
+            Student student = loginInfo();
+            if(student.getStudentStatus().equals("Teacher")){
+                teacherTabs.toFront();
+            }
+            else {
+                studentTabs.toFront();
+            }
         }
     }
 
@@ -199,8 +350,9 @@ public class Controller {
         String studentPassword = SQLiteDatabase.studentPassword(studentID);
         String studentCourse = SQLiteDatabase.studentCourse(studentID);
         String studentAttendance = SQLiteDatabase.studentAttendance(studentID);
+        String studentStatus = SQLiteDatabase.studentStatus(studentID);
 
-        return new Student(studentID, studentFName, studentLName, studentPassword, studentCourse, studentAttendance);
+        return new Student(studentID, studentFName, studentLName, studentPassword, studentCourse, studentAttendance, studentStatus);
     }
 
     @FXML
@@ -213,6 +365,8 @@ public class Controller {
 
     @FXML
     void Attendpage(ActionEvent event){
+        Student student = loginInfo();
+        System.out.println(student.getStudentStatus());
         attendpage.toFront();
     }
 
