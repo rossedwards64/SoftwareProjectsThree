@@ -1,4 +1,4 @@
-package sample;
+package Mobile;
 
 import database.SQLiteDatabase;
 import javafx.collections.FXCollections;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Controller {
+public class MobileController {
 
     @FXML
     private AnchorPane LoginPage;
