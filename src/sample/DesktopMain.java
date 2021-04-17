@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
-public class Main extends Application {
+public class DesktopMain extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
