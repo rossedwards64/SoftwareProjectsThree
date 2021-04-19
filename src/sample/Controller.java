@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import student.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -115,7 +116,10 @@ public class Controller {
     @FXML
     private Button MainButton;
     @FXML
+    private AnchorPane ResetStudent;
+    @FXML
     private TextArea OtherReason;
+
 
 
     ObservableList <String> choices = FXCollections.observableArrayList("Sick", "Late", "Medical", "Family", "Job" , "Commitment", "Other");
@@ -135,9 +139,19 @@ public class Controller {
     public void backtomain(ActionEvent event) throws IOException {
         LoginPage.toFront();
         Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\absentReasons.csv")); //move else where later
+        ResetStudent.toFront();
     }
 
+    public void Teacherchangepassword(ActionEvent event){
+        Student user = loginInfo();
 
+        String username = user.getStudentID();
+
+
+        SQLiteDatabase.UpdatePassword(username);
+
+
+    }
     @FXML
     public void closeWindow(ActionEvent event){
         absentWindow.toBack();
@@ -311,10 +325,10 @@ public class Controller {
             //homePage.toFront();
             Student student = loginInfo();
             if(student.getStudentStatus().equals("Teacher")){
-                teacherTabs.toFront();
+                //teacherTabs.toFront();
             }
             else {
-                studentTabs.toFront();
+                //studentTabs.toFront();
             }
         }
     }
@@ -327,6 +341,7 @@ public class Controller {
     @FXML
     void Account (ActionEvent event){
         AccountAnchorPane.toFront();
+
     }
 
     @FXML

@@ -157,4 +157,20 @@ public class SQLiteDatabase {
         }
         return studentID;
     }
+    public static void UpdatePassword(String accountUsername){
+        String SQL = "UPDATE StudentInfo SET StudentPassword = ? WHERE StudentId = ?";
+        try(Connection conn = connect();
+            PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+            String newPassword = "ross";
+            // set parameters
+            pstmt.setString(1, accountUsername);
+            pstmt.setString(2, newPassword);
+            // save changes
+            pstmt.executeUpdate();
+            conn.close();
+            System.out.println("Update successful!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
