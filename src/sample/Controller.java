@@ -137,6 +137,16 @@ public class Controller {
     private PasswordField NewPassword;
     @FXML
     private Button x1;
+    @FXML
+    private AnchorPane ZoomLinkPage;
+    @FXML
+    private Button ZoomLink;
+    @FXML
+    private TextField CodeField;
+    @FXML
+    private Button confrimCodeButton;
+    @FXML
+    private Label Error;
 
     @FXML
     private Button XButton1;
@@ -152,7 +162,30 @@ public class Controller {
     public void Logout(ActionEvent event){
         SigninPage.toFront();
     }
+    @FXML
+    public void Checkcode(ActionEvent event){
+        if (CodeField.getText().equals("123456")){
+          ZoomLinkPage.toBack();
+            Student student = loginInfo();
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+            String x = dtf.format(now);
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter("attendance_info.csv", true));
+                writer.write(x + ", ");
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+            LeaveButton.toFront();
+
+        }
+        else{
+            CodeField.clear();
+            Error.setText("this code is incorrect");
+        }
+    }
     @FXML
     public void changepasswordStudent(ActionEvent event){ResetStudent1.toFront();}
     @FXML
@@ -386,6 +419,10 @@ public class Controller {
     void Account (ActionEvent event){
         AccountAnchorPane.toFront();
 
+    }
+    @FXML
+    void ZoomLinkForward(ActionEvent event){
+        ZoomLinkPage.toFront();
     }
 
 
