@@ -4,11 +4,16 @@ import database.SQLiteDatabase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import student.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 
+import java.awt.*;
 import java.io.*;
 import java.net.URI;
 import java.time.LocalDateTime;
@@ -108,7 +113,10 @@ public class Controller {
     @FXML
     private Label reasonID;
     @FXML
+    private Button MainButton;
+    @FXML
     private TextArea OtherReason;
+
 
     ObservableList <String> choices = FXCollections.observableArrayList("Sick", "Late", "Medical", "Family", "Job" , "Commitment", "Other");
 
@@ -123,6 +131,12 @@ public class Controller {
         absentReason.setItems(choices);
         absentWindow.toFront();
     }
+    @FXML
+    public void backtomain(ActionEvent event) throws IOException {
+        LoginPage.toFront();
+        Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\absentReasons.csv")); //move else where later
+    }
+
 
     @FXML
     public void closeWindow(ActionEvent event){
@@ -278,7 +292,7 @@ public class Controller {
     }
 
     public void signInButtonOnAction(ActionEvent event){
-        if (StudentId.getText().isEmpty() && Password.getText().isEmpty()){
+        if (StudentId.getText().isEmpty() || Password.getText().isEmpty()){
             signInLabel.setText("Enter a Password and Email");
         }
         else{
@@ -294,7 +308,7 @@ public class Controller {
         if(validate) {
             SigninPage.toBack();
             LoginPage.toFront();
-            homePage.toFront();
+            //homePage.toFront();
             Student student = loginInfo();
             if(student.getStudentStatus().equals("Teacher")){
                 teacherTabs.toFront();

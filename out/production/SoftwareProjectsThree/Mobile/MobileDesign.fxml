@@ -43,7 +43,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #eb4034;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mobile.MobileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mobile.MobileController">
    <children>
       <AnchorPane fx:id="LoginPage" layoutY="85.0" prefHeight="515.0" prefWidth="335.0" style="-fx-background-color: #42647F;">
          <children>
@@ -66,7 +66,7 @@
                   </ImageView>
                   <ImageView fitHeight="68.0" fitWidth="57.0" layoutX="187.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Image/Grades Icon.png" />
+                        <Image url="@../Image/Grades%20Icon.png" />
                      </image>
                   </ImageView>
                   <Text layoutX="21.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" />
@@ -91,7 +91,7 @@
             </ImageView>
             <ImageView fitHeight="99.0" fitWidth="147.0" layoutX="14.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Image/campus_map-2019-min (1).png" />
+                  <Image url="@../Image/campus_map-2019-min%20(1).png" />
                </image>
             </ImageView>
             <Button fx:id="Campus" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" onAction="#CampusMap" opacity="0.0" prefHeight="97.0" prefWidth="147.0" text="Button" />
@@ -170,7 +170,7 @@
             <Text layoutX="110.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please choose a reason" />
             <ImageView fitHeight="71.0" fitWidth="204.0" layoutX="67.0" layoutY="236.0" opacity="0.32" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@British_University_in_Egypt (1).png" />
+                  <Image url="@British_University_in_Egypt%20(1).png" />
                </image></ImageView>
          </children>
       </AnchorPane>
