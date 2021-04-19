@@ -118,7 +118,30 @@ public class Controller {
     @FXML
     private AnchorPane ResetStudent;
     @FXML
+    private TextField StudentIdPassword;
+    @FXML
     private TextArea OtherReason;
+    @FXML
+    private AnchorPane ResetStudent1;
+
+    @FXML
+    private TextField StudentIdPassword1;
+
+    @FXML
+    private Button changePassword1;
+
+    @FXML
+    private PasswordField CurrentPassword1;
+
+    @FXML
+    private PasswordField NewPassword;
+    @FXML
+    private Button x1;
+
+    @FXML
+    private Button XButton1;
+
+
 
 
 
@@ -131,24 +154,45 @@ public class Controller {
     }
 
     @FXML
+    public void changepasswordStudent(ActionEvent event){ResetStudent1.toFront();}
+    @FXML
+    public void changepasswordStudentOnAction(ActionEvent event){
+        String id = StudentId.getText();
+        String currentpassword = SQLiteDatabase.studentPassword(id);
+        if (currentpassword.equals(CurrentPassword1.getText())){
+            SQLiteDatabase.StudentUpdatePassword(id, NewPassword.getText());
+        }
+        else{
+            System.out.println("wrong currentpassword");
+        }
+    }
+    @FXML
+    public void x(ActionEvent event){
+        ResetStudent.toBack();
+        ResetStudent1.toBack();
+    }
+    @FXML
     public void recordAbsent(ActionEvent event){
         absentReason.setItems(choices);
         absentWindow.toFront();
     }
     @FXML
+    public void changepasswordStudentWindow(ActionEvent event){
+        ResetStudent1.toFront();
+    }
+    @FXML
     public void backtomain(ActionEvent event) throws IOException {
         LoginPage.toFront();
         Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\absentReasons.csv")); //move else where later
-        ResetStudent.toFront();
     }
 
     public void Teacherchangepassword(ActionEvent event){
-        Student user = loginInfo();
+        String id = StudentIdPassword.getText();
+        String name = SQLiteDatabase.studentFName(id);
 
-        String username = user.getStudentID();
 
 
-        SQLiteDatabase.UpdatePassword(username);
+        SQLiteDatabase.UpdatePassword(id, name);
 
 
     }
@@ -344,29 +388,16 @@ public class Controller {
 
     }
 
+
     @FXML
     void RecordAttendance(ActionEvent event){
         Student student = loginInfo();
-        String id = StudentId.getText();//For now this is static but we can retrive this
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");// time
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
-        String Attendacemark = "On time"; //CAN BE LATE(5min past lesson time), Absence(Didnt attend)
-        System.out.println("Student id is " + student.getStudentID() + ", Date and time is " + dtf.format(now) + ", Student was " + Attendacemark);
-
-        ArrayList<String> attendanceInfo = new ArrayList();
-        attendanceInfo.add(student.getStudentID());
-        attendanceInfo.add(student.getStudentFName());
-        attendanceInfo.add(student.getStudentLName());
-        attendanceInfo.add(student.getStudentCourse());
-        attendanceInfo.add(student.getStudentAttendance());
-        String attendanceInfoString = String.join(",", attendanceInfo);
-
-        BufferedWriter writer;
+        String x = dtf.format(now);
         try {
-            writer = new BufferedWriter(new FileWriter("attendance_info.csv", true));
-            writer.write(attendanceInfoString);
-            writer.newLine();
+            BufferedWriter writer = new BufferedWriter(new FileWriter("attendance_info.csv", true));
+            writer.write(x + ", ");
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -386,12 +417,32 @@ public class Controller {
 
         return new Student(studentID, studentFName, studentLName, studentPassword, studentCourse, studentAttendance, studentStatus);
     }
-
+    public String timeleft(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String x = dtf.format(now);
+        return x;
+    }
     @FXML
     void RecordTimeLeft(ActionEvent event){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");// time
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println("Student left at " + dtf.format((now)));
+
+        String x = timeleft();
+        String studentID = StudentId.getText();
+        String studentFName = SQLiteDatabase.studentFName(studentID);
+        String studentLName = SQLiteDatabase.studentLName(studentID);
+        String studentCourse = SQLiteDatabase.studentCourse(studentID);
+        String studentAttendance = SQLiteDatabase.studentAttendance(studentID);
+
+
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("attendance_info.csv", true));
+            writer.write(studentID + ", " + studentFName +", " + studentLName + ", " + studentAttendance+", " + studentCourse + "," + x);
+            writer.newLine();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         AttendButton.toFront();
     }
 

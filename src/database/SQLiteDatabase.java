@@ -124,6 +124,7 @@ public class SQLiteDatabase {
         return studentID;
     }
 
+
     public static String studentPassword(String studentID) {
         Connection conn = connect();
         try {
@@ -157,16 +158,39 @@ public class SQLiteDatabase {
         }
         return studentID;
     }
-    public static void UpdatePassword(String accountUsername){
+    public static void StudentUpdatePassword(String Id, String newpassword){
         String SQL = "UPDATE StudentInfo SET StudentPassword = ? WHERE StudentId = ?";
         try(Connection conn = connect();
+
             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-            String newPassword = "ross";
+
             // set parameters
-            pstmt.setString(1, accountUsername);
-            pstmt.setString(2, newPassword);
+            pstmt.setString(1, newpassword);
+            pstmt.setString(2, Id);
             // save changes
             pstmt.executeUpdate();
+
+
+            conn.close();
+            System.out.println("Update successful!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void UpdatePassword(String accountUsername, String newPassword){
+
+        String SQL = "UPDATE StudentInfo SET StudentPassword = ? WHERE StudentId = ?";
+        try(Connection conn = connect();
+
+            PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+
+            // set parameters
+            pstmt.setString(1, newPassword);
+            pstmt.setString(2, accountUsername);
+            // save changes
+            pstmt.executeUpdate();
+
+
             conn.close();
             System.out.println("Update successful!");
         } catch (SQLException e) {
