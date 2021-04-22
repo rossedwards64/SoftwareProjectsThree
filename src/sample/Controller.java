@@ -231,7 +231,7 @@ public class Controller {
     }
     @FXML
     public void closeWindow(ActionEvent event){
-        absentWindow.toBack();
+        AccountAnchorPane.toBack();
         attendancePage.toBack();
 
     }
@@ -245,11 +245,11 @@ public class Controller {
         String searchTerm = student.getStudentCourse();
         String[] studentData = (fetchStudentData(searchTerm, filePath));
         try{
-            absentName.setText(studentData[0]);
-            absentAttendance.setText(studentData[1]);
-            absentReasonTeacher.setText(studentData[2]);
+            absentName.setText(studentData[1]);
+            reasonID.setText(studentData[0]);
+            absentAttendance.setText(studentData[2]);
+            absentReasonTeacher.setText(studentData[4]);
             System.out.println(studentData[3]);
-            reasonID.setText(studentData[4]);
         }
         catch (Exception var15){
         }
@@ -299,8 +299,8 @@ public class Controller {
     public static String[] fetchStudentData(String searchTerm, String filePath){
         ArrayList<String> records = new ArrayList<String>();
 
-        String name = ""; String attendance = ""; String reason = ""; String course = ""; String status = "";
-        boolean found = false;
+        String ID = ""; String name = ""; String attendance = ""; String course = ""; String reason = "";
+        boolean found =false;
 
         try {
             Scanner x;
@@ -308,20 +308,20 @@ public class Controller {
             x.useDelimiter("[,\n]");
 
             while (x.hasNext() && !found){
+                ID = x.next();
                 name = x.next();
                 attendance = x.next();
-                reason = x.next();
                 course = x.next();
-                status = x.next();
+                reason = x.next();
 
                 if (course.equals(searchTerm)){
                     System.out.println(course);
                     System.out.println(searchTerm);
+                    records.add(ID);
                     records.add(name);
                     records.add(attendance);
-                    records.add(reason);
                     records.add(course);
-                    records.add(status);
+                    records.add(reason);
                     found = true;
 
                 }
@@ -344,11 +344,11 @@ public class Controller {
         String filePath = "absentReasons.csv";
         String[] studentData = (fetchStudentData(searchTerm, filePath));
         try{
-            absentName.setText(studentData[0]);
-            absentAttendance.setText(studentData[1]);
-            absentReasonTeacher.setText(studentData[2]);
+            absentName.setText(studentData[1]);
+            reasonID.setText(studentData[0]);
+            absentAttendance.setText(studentData[2]);
+            absentReasonTeacher.setText(studentData[4]);
             System.out.println(studentData[3]);
-            reasonID.setText(studentData[4]);
         }
         catch (Exception var15){
         }
@@ -378,8 +378,8 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //absentWindow.toBack();
-        //absentReason.clear();
+        absentWindow.toBack();
+        OtherReason.clear();
     }
 
     public void signInButtonOnAction(ActionEvent event){
@@ -402,10 +402,10 @@ public class Controller {
             //homePage.toFront();
             Student student = loginInfo();
             if(student.getStudentStatus().equals("Teacher")){
-                //teacherTabs.toFront();
+                teacherTabs.toFront();
             }
             else {
-                //studentTabs.toFront();
+                studentTabs.toFront();
             }
         }
     }
