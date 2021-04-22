@@ -131,6 +131,8 @@ public class Controller {
     private TextArea OtherReason;
     @FXML
     private AnchorPane ResetStudent1;
+    @FXML
+    private AnchorPane noData;
 
     @FXML
     private TextField StudentIdPassword1;
@@ -143,6 +145,8 @@ public class Controller {
 
     @FXML
     private PasswordField NewPassword;
+    @FXML
+    private AnchorPane absenceData;
     @FXML
     private Button x1;
     @FXML
@@ -264,6 +268,7 @@ public class Controller {
             absentAttendance.setText("");
             absentReasonTeacher.setText("");
             absentID.setText("");
+            noData.toFront();
         }
 
     }
@@ -371,6 +376,7 @@ public class Controller {
             absentAttendance.setText("");
             absentReasonTeacher.setText("");
             absentID.setText("");
+            noData.toFront();
         }
     }
 
@@ -427,7 +433,27 @@ public class Controller {
             Student student = loginInfo();
             if(student.getStudentStatus().equals("Teacher")){
                 AdminPage.toFront();
-                //teacherTabs.toFront();
+                teacherTabs.toFront();
+
+                String searchTerm = student.getStudentCourse();
+                String filePath = "absentReasons.csv";
+                String[] studentData = (fetchStudentData(searchTerm, filePath));
+                try{
+                    absenceData.toFront();
+                    absentName.setText(studentData[1]);
+                    reasonID.setText(studentData[0]);
+                    absentAttendance.setText(studentData[2]);
+                    absentReasonTeacher.setText(studentData[4]);
+                    absentID.setText(studentData[5]);
+                }
+                catch (Exception var15){
+                    absentName.setText("");
+                    reasonID.setText("");
+                    absentAttendance.setText("");
+                    absentReasonTeacher.setText("");
+                    absentID.setText("");
+                    noData.toFront();
+                }
             }
             else {
                 studentTabs.toFront();

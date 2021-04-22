@@ -60,52 +60,6 @@
             <Button layoutX="672.0" layoutY="15.0" mnemonicParsing="false" onAction="#x" text="Button" fx:id="x1" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="AdminPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
-         <children>
-            <AnchorPane layoutX="856.0" layoutY="161.0" prefHeight="527.0" prefWidth="380.0" style="-fx-background-color: #ffffff;">
-               <children>
-                  <Text fill="#b2aaaa" layoutX="-2.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Data Avaliable " textAlignment="CENTER" wrappingWidth="381.01873779296875">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="3.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications Of Student Attendance" textAlignment="CENTER" wrappingWidth="366.47613525390625">
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="-7.0" prefHeight="117.0" prefWidth="1288.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <Text layoutX="902.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance">
-                     <font>
-                        <Font name="System Bold" size="22.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="536.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Student Passwords">
-                     <font>
-                        <Font name="System Bold Italic" size="22.0" />
-                     </font>
-                  </Text>
-                  <Text fill="RED" layoutX="1154.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
-                     <font>
-                        <Font name="System Bold Italic" size="22.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="ChangeStudentPassword" layoutX="535.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="257.0" text="Button" />
-                  <Button fx:id="CheckStudentAttendance" layoutX="904.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="124.0" text="Button" />
-                  <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#Logout" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="39.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/British_University_in_Egypt.png" />
-               </image>
-            </ImageView>
-            <Text layoutX="92.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back [User]" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="attendpage" layoutY="120.0" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
          <children>
             <AnchorPane fx:id="ZoomLinkPage" layoutX="275.0" layoutY="42.0" prefHeight="354.0" prefWidth="783.0" style="-fx-background-color: #ffffff;">
@@ -136,125 +90,6 @@
             <Button fx:id="AbsentWindowButton" layoutX="520.0" layoutY="428.0" mnemonicParsing="false" onAction="#recordAbsent" opacity="0.0" prefHeight="29.0" prefWidth="342.0" text="Button" />
             <Text layoutX="653.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Online link code" wrappingWidth="115.0" />
             <Button fx:id="ZoomLink" layoutX="652.0" layoutY="533.0" mnemonicParsing="false" onAction="#ZoomLinkForward" opacity="0.0" prefHeight="29.0" prefWidth="96.0" text="Button" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
-            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/British_University_in_Egypt.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
-            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
-            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="LoginPage" layoutY="120.0" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: red;">
-         <children>
-            <AnchorPane layoutX="48.0" layoutY="75.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
-               <children>
-                  <Text layoutX="130.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance Percentage">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#00f725" layoutX="200.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100%">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="48.0" layoutY="253.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
-               <children>
-                  <Text layoutX="170.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unread Emails">
-                     <font>
-                        <Font size="28.0" />
-                     </font>
-                  </Text>
-                  <Text fill="RED" layoutX="225.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="48.0" layoutY="420.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
-               <children>
-                  <Text layoutX="140.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Scheduled Lesson">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-                  <Text fill="RED" layoutX="140.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19th September 2021 9am">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="725.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/adm-now-bann-min-300x200.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="25.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Activity" wrappingWidth="175.833984375">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="StudentActivity" mnemonicParsing="false" onAction="#StudentActivityWebsite" opacity="0.0" prefHeight="204.0" prefWidth="213.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="997.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/Open-Days-min-300x200.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="35.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Union" wrappingWidth="157.07032563393034">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="StudentUnion" mnemonicParsing="false" onAction="#StudentUnionWebsite" opacity="0.0" prefHeight="200.0" prefWidth="216.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="996.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/3dbanner-min-300x198.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Tour" wrappingWidth="148.4036386222116">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="VirtualTour" mnemonicParsing="false" onAction="#VirtualTourWebsite" opacity="0.0" prefHeight="204.0" prefWidth="217.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="725.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/campus_map-2019-min (1).png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campus map" wrappingWidth="148.4036386222116">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="Campus" mnemonicParsing="false" onAction="#CampusMap" opacity="0.0" prefHeight="204.0" prefWidth="218.0" text="Button" />
-               </children>
-            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="AccountAnchorPane" prefHeight="720.0" prefWidth="415.0" style="-fx-background-color: #FFFFFF;">
@@ -448,9 +283,236 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Button fx:id="MaS" layoutX="15.0" layoutY="637.0" mnemonicParsing="false" onAction="#markAsRead" text="Mark as Read" />
                </children>
             </AnchorPane>
             <Button layoutX="395.0" maxHeight="10.0" maxWidth="10.0" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: white; -fx-background-radius: 50;" text="X" textFill="RED" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="teacherTabs" prefHeight="120.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Text layoutX="902.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="536.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Student Passwords">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="1154.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Text>
+            <Button fx:id="ChangeStudentPassword" layoutX="535.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="257.0" text="Button" />
+            <Button fx:id="CheckStudentAttendance" layoutX="904.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="124.0" text="Button" />
+            <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#Logout" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
+            <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="25.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/British_University_in_Egypt.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AdminPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+         <children>
+            <Text layoutX="92.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back [User]" />
+            <AnchorPane fx:id="noData" layoutX="856.0" layoutY="161.0" prefHeight="527.0" prefWidth="380.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text fill="#b2aaaa" layoutX="-2.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Data Avaliable " textAlignment="CENTER" wrappingWidth="381.01873779296875">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="3.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications Of Student Attendance" textAlignment="CENTER" wrappingWidth="366.47613525390625">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="absenceData" layoutX="856.0" layoutY="161.0" prefHeight="527.0" prefWidth="380.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text layoutX="3.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications Of Student Attendance" textAlignment="CENTER" wrappingWidth="366.47613525390625">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="20.0" layoutY="50.0" text="Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="absentName" alignment="CENTER_RIGHT" layoutX="201.0" layoutY="50.0" prefHeight="27.0" prefWidth="157.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="80.0" text="ID:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="reasonID" alignment="CENTER_RIGHT" layoutX="201.0" layoutY="80.0" prefHeight="27.0" prefWidth="157.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="110.0" text="Attendance:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="absentAttendance" alignment="CENTER_RIGHT" layoutX="210.0" layoutY="110.0" prefHeight="27.0" prefWidth="148.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="140.0" text="Reason:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="absentReasonTeacher" alignment="TOP_RIGHT" layoutX="121.0" layoutY="140.0" prefHeight="263.0" prefWidth="237.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="MaS" layoutX="20.0" layoutY="480.0" mnemonicParsing="false" onAction="#markAsRead" text="Mark as Read" />
+                  <Label layoutX="20.0" layoutY="407.0" text="Absent ID:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="absentID" alignment="CENTER_RIGHT" layoutX="157.0" layoutY="407.0" prefHeight="27.0" prefWidth="201.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="confirmID" layoutX="20.0" layoutY="443.0" promptText="Confirm Absent ID" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="LoginPage" layoutY="120.0" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+         <children>
+            <AnchorPane layoutX="48.0" layoutY="75.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
+               <children>
+                  <Text layoutX="130.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance Percentage">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00f725" layoutX="200.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100%">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="48.0" layoutY="253.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
+               <children>
+                  <Text layoutX="170.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unread Emails">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="225.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="48.0" layoutY="420.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
+               <children>
+                  <Text layoutX="140.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Scheduled Lesson">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="140.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19th September 2021 9am">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="725.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/adm-now-bann-min-300x200.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="25.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Activity" wrappingWidth="175.833984375">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="StudentActivity" mnemonicParsing="false" onAction="#StudentActivityWebsite" opacity="0.0" prefHeight="204.0" prefWidth="213.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="997.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/Open-Days-min-300x200.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Union" wrappingWidth="157.07032563393034">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="StudentUnion" mnemonicParsing="false" onAction="#StudentUnionWebsite" opacity="0.0" prefHeight="200.0" prefWidth="216.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="996.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/3dbanner-min-300x198.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Tour" wrappingWidth="148.4036386222116">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="VirtualTour" mnemonicParsing="false" onAction="#VirtualTourWebsite" opacity="0.0" prefHeight="204.0" prefWidth="217.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="725.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/campus_map-2019-min (1).png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campus map" wrappingWidth="148.4036386222116">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="Campus" mnemonicParsing="false" onAction="#CampusMap" opacity="0.0" prefHeight="204.0" prefWidth="218.0" text="Button" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <PasswordField fx:id="Password" layoutX="57.0" layoutY="470.0" prefHeight="25.0" prefWidth="1166.0" promptText="Password" />
+            <ImageView fitHeight="383.0" fitWidth="841.0" layoutX="190.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/British_University_in_Egypt.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="StudentId" layoutX="57.0" layoutY="421.0" prefHeight="25.0" prefWidth="1168.0" promptText="Student id" />
+            <Button fx:id="signInButtonOnAction" layoutX="57.0" layoutY="550.0" mnemonicParsing="false" onAction="#signInButtonOnAction" prefHeight="38.0" prefWidth="1189.0" text="Signin" />
+            <Label fx:id="signInLabel" layoutX="535.0" layoutY="508.0" prefHeight="12.0" prefWidth="238.0" textFill="RED" />
          </children>
       </AnchorPane>
    </children>
