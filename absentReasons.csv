@@ -1,3 +1,6 @@
-Josh Benton,100,fuck it,Maths,100
-Ross Edwards,100,cba tbh,Computer Science,453609
-Ross Edwards,101,cba tbh,Computer Science,66666
+Student Id, Studentname,Student Attendance, Student Course, Student Reason
+1,Ross Edwards,100,Computer Science,Medical
+1,Ross Edwards,100,Computer Science,122
+1,Ross Edwards,100,Computer Science,Late
+,,,,
+1,Ross Edwards,100,Computer Science,traffic

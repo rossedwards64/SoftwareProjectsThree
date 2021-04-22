@@ -17,5 +17,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="lib" level="application" />
+    <orderEntry type="library" name="lib2" level="project" />
   </component>
 </module>
