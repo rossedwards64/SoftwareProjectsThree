@@ -22,6 +22,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Controller {
 
@@ -113,6 +114,10 @@ public class Controller {
     private Label absentReasonTeacher;
     @FXML
     private Label reasonID;
+    @FXML
+    private Label absentID;
+    @FXML
+    private TextField confirmID;
     @FXML
     private Button MainButton;
     @FXML
@@ -240,8 +245,9 @@ public class Controller {
     public void markAsRead(ActionEvent event){
         Student student = loginInfo();
         String filePath = "absentReasons.csv";
-        String removeTerm = reasonID.getText();
-        removeRecord(filePath, removeTerm, 5);
+        String removeTerm = student.getStudentCourse();
+        removeRecord(filePath, removeTerm, 4);
+        confirmID.clear();
         String searchTerm = student.getStudentCourse();
         String[] studentData = (fetchStudentData(searchTerm, filePath));
         try{
@@ -249,9 +255,14 @@ public class Controller {
             reasonID.setText(studentData[0]);
             absentAttendance.setText(studentData[2]);
             absentReasonTeacher.setText(studentData[4]);
-            System.out.println(studentData[3]);
+            absentID.setText(studentData[5]);
         }
         catch (Exception var15){
+            absentName.setText("");
+            reasonID.setText("");
+            absentAttendance.setText("");
+            absentReasonTeacher.setText("");
+            absentID.setText("");
         }
 
     }
@@ -272,15 +283,18 @@ public class Controller {
             String currentLine;
             while((currentLine = br.readLine()) != null) {
                 String[] data = currentLine.split(",");
-                System.out.println(data[position]);
-                System.out.println(removeTerm);
                 String ID = data[position];
-                if (!ID.equals(String.valueOf(removeTerm))) {
+                String confirm = data[5];
+                System.out.println(removeTerm);
+                System.out.println(ID);
+                System.out.println(confirm);
+                System.out.println(confirmID.getText());
+
+                if (!ID.equalsIgnoreCase(removeTerm) || !confirm.equals(confirmID.getText())) {
+                    System.out.println("keep");
                     pw.println(currentLine);
-                    System.out.println("not same");
                 }
             }
-
             pw.flush();
             pw.close();
             fr.close();
@@ -299,7 +313,7 @@ public class Controller {
     public static String[] fetchStudentData(String searchTerm, String filePath){
         ArrayList<String> records = new ArrayList<String>();
 
-        String ID = ""; String name = ""; String attendance = ""; String course = ""; String reason = "";
+        String ID = ""; String name = ""; String attendance = ""; String course = ""; String reason = ""; String reasonID = "";
         boolean found =false;
 
         try {
@@ -313,15 +327,15 @@ public class Controller {
                 attendance = x.next();
                 course = x.next();
                 reason = x.next();
+                reasonID = x.next();
 
                 if (course.equals(searchTerm)){
-                    System.out.println(course);
-                    System.out.println(searchTerm);
                     records.add(ID);
                     records.add(name);
                     records.add(attendance);
                     records.add(course);
                     records.add(reason);
+                    records.add(reasonID);
                     found = true;
 
                 }
@@ -348,9 +362,14 @@ public class Controller {
             reasonID.setText(studentData[0]);
             absentAttendance.setText(studentData[2]);
             absentReasonTeacher.setText(studentData[4]);
-            System.out.println(studentData[3]);
+            absentID.setText(studentData[5]);
         }
         catch (Exception var15){
+            absentName.setText("");
+            reasonID.setText("");
+            absentAttendance.setText("");
+            absentReasonTeacher.setText("");
+            absentID.setText("");
         }
     }
 
@@ -368,6 +387,10 @@ public class Controller {
             value = OtherReason.getText();
         }
         absentString.add(value);
+
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 100000 + 1);
+        absentString.add(String.valueOf(randomNum));
+
         String absentList = String.join(",", absentString);
         BufferedWriter writer;
         try {
