@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.awt.*;
 import java.io.*;
+import java.lang.annotation.Inherited;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -111,6 +112,8 @@ public class Controller {
     @FXML
     private Label absentAttendance;
     @FXML
+    private AnchorPane AdminPage;
+    @FXML
     private Label absentReasonTeacher;
     @FXML
     private Label reasonID;
@@ -158,10 +161,8 @@ public class Controller {
 
 
 
-
-
     ObservableList <String> choices = FXCollections.observableArrayList("Sick", "Late", "Medical", "Family", "Job" , "Commitment", "Other");
-
+    
 
     @FXML
     public void Logout(ActionEvent event){
@@ -425,12 +426,17 @@ public class Controller {
             //homePage.toFront();
             Student student = loginInfo();
             if(student.getStudentStatus().equals("Teacher")){
-                teacherTabs.toFront();
+                AdminPage.toFront();
+                //teacherTabs.toFront();
             }
             else {
                 studentTabs.toFront();
             }
         }
+    }
+    @FXML
+    public void teacherStudentReset(ActionEvent event){
+        ResetStudent.toFront();
     }
 
     public void checkdetails(){
