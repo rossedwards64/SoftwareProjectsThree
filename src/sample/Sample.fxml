@@ -15,6 +15,112 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
+      <AnchorPane fx:id="LoginPage" layoutY="120.0" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+         <children>
+            <AnchorPane layoutX="48.0" layoutY="75.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
+               <children>
+                  <Text layoutX="130.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance Percentage">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#00f725" layoutX="200.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100%">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="48.0" layoutY="253.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
+               <children>
+                  <Text layoutX="170.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unread Emails">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="225.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="48.0" layoutY="420.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
+               <children>
+                  <Text layoutX="140.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Scheduled Lesson">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="RED" layoutX="140.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19th September 2021 9am">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="725.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/adm-now-bann-min-300x200.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="25.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Activity" wrappingWidth="175.833984375">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="StudentActivity" mnemonicParsing="false" onAction="#StudentActivityWebsite" opacity="0.0" prefHeight="204.0" prefWidth="213.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="997.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/Open-Days-min-300x200.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Union" wrappingWidth="157.07032563393034">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="StudentUnion" mnemonicParsing="false" onAction="#StudentUnionWebsite" opacity="0.0" prefHeight="200.0" prefWidth="216.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="996.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/3dbanner-min-300x198.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Tour" wrappingWidth="148.4036386222116">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="VirtualTour" mnemonicParsing="false" onAction="#VirtualTourWebsite" opacity="0.0" prefHeight="204.0" prefWidth="217.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="725.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
+               <children>
+                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/campus_map-2019-min (1).png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campus map" wrappingWidth="148.4036386222116">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="Campus" mnemonicParsing="false" onAction="#CampusMap" opacity="0.0" prefHeight="204.0" prefWidth="218.0" text="Button" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="ResetStudent1" layoutX="260.0" layoutY="188.0" prefHeight="472.0" prefWidth="747.0" style="-fx-background-color: #000000;">
          <children>
             <AnchorPane layoutX="179.0" layoutY="58.0" prefHeight="334.0" prefWidth="366.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="80.0">
@@ -239,33 +345,6 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="teacherTabs" prefHeight="120.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <Text layoutX="902.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <Text layoutX="536.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Student Passwords">
-               <font>
-                  <Font name="System Bold Italic" size="22.0" />
-               </font>
-            </Text>
-            <Text fill="RED" layoutX="1154.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
-               <font>
-                  <Font name="System Bold Italic" size="22.0" />
-               </font>
-            </Text>
-            <Button fx:id="ChangeStudentPassword" layoutX="535.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="48.0" prefWidth="257.0" text="Button" />
-            <Button fx:id="CheckStudentAttendance" layoutX="904.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="124.0" text="Button" />
-            <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#Logout" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
-            <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="25.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Image/British_University_in_Egypt.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="AdminPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
          <children>
             <Text layoutX="92.0" layoutY="677.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back [User]" />
@@ -346,110 +425,31 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="LoginPage" layoutY="120.0" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: #42647F;">
+      <AnchorPane fx:id="teacherTabs" prefHeight="120.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <AnchorPane layoutX="48.0" layoutY="75.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
-               <children>
-                  <Text layoutX="130.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance Percentage">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#00f725" layoutX="200.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100%">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="48.0" layoutY="253.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
-               <children>
-                  <Text layoutX="170.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unread Emails">
-                     <font>
-                        <Font size="28.0" />
-                     </font>
-                  </Text>
-                  <Text fill="RED" layoutX="225.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
-                     <font>
-                        <Font size="56.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="48.0" layoutY="420.0" prefHeight="123.0" prefWidth="526.0" style="-fx-background-color: #CDCDCD; -fx-background-radius: 30;">
-               <children>
-                  <Text layoutX="140.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Scheduled Lesson">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-                  <Text fill="RED" layoutX="140.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19th September 2021 9am">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="725.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/adm-now-bann-min-300x200.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="25.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Activity" wrappingWidth="175.833984375">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="StudentActivity" mnemonicParsing="false" onAction="#StudentActivityWebsite" opacity="0.0" prefHeight="204.0" prefWidth="213.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="997.0" layoutY="75.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/Open-Days-min-300x200.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="35.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Union" wrappingWidth="157.07032563393034">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="StudentUnion" mnemonicParsing="false" onAction="#StudentUnionWebsite" opacity="0.0" prefHeight="200.0" prefWidth="216.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="996.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/3dbanner-min-300x198.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Tour" wrappingWidth="148.4036386222116">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="VirtualTour" mnemonicParsing="false" onAction="#VirtualTourWebsite" opacity="0.0" prefHeight="204.0" prefWidth="217.0" text="Button" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="725.0" layoutY="340.0" prefHeight="203.0" prefWidth="216.0" style="-fx-background-color: #003366;">
-               <children>
-                  <ImageView fitHeight="141.0" fitWidth="234.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/campus_map-2019-min (1).png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="40.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Campus map" wrappingWidth="148.4036386222116">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="Campus" mnemonicParsing="false" onAction="#CampusMap" opacity="0.0" prefHeight="204.0" prefWidth="218.0" text="Button" />
-               </children>
-            </AnchorPane>
+            <Text layoutX="902.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attendance">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="536.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset Student Passwords">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="1154.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Text>
+            <Button fx:id="ChangeStudentPassword" layoutX="535.0" layoutY="32.0" mnemonicParsing="false" onAction="#teacherStudentReset" opacity="0.0" prefHeight="48.0" prefWidth="257.0" text="Button" />
+            <Button fx:id="CheckStudentAttendance" layoutX="904.0" layoutY="32.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="124.0" text="Button" />
+            <Button fx:id="logout" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#Logout" opacity="0.0" prefHeight="57.0" prefWidth="87.0" text="Button" />
+            <ImageView fitHeight="238.0" fitWidth="264.0" layoutX="25.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/British_University_in_Egypt.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="SigninPage" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
