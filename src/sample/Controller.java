@@ -233,7 +233,7 @@ public class Controller {
     }
     @FXML
     public void OpenFile(ActionEvent event) throws IOException {
-        Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\absentReasons.csv")); //move else where later
+        Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\attendance_info.csv")); //move else where later
     }
 
     public void Teacherchangepassword(ActionEvent event){
