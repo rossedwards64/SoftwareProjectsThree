@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import student.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -161,6 +162,8 @@ public class Controller {
     private Label Error;
     @FXML
     private Button Openfile;
+    @FXML
+    private Text attendanceP;
 
     @FXML
     private Button XButton1;
@@ -464,6 +467,7 @@ public class Controller {
             }
             else {
                 studentTabs.toFront();
+                attendanceP.setText(student.getStudentAttendance());
             }
         }
     }
