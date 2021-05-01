@@ -159,9 +159,12 @@ public class Controller {
     private Button confrimCodeButton;
     @FXML
     private Label Error;
+    @FXML
+    private Button Openfile;
 
     @FXML
     private Button XButton1;
+
 
 
 
@@ -224,9 +227,13 @@ public class Controller {
         ResetStudent1.toFront();
     }
     @FXML
-    public void backtomain(ActionEvent event) throws IOException {
+    public void backtomain(ActionEvent event) {
         LoginPage.toFront();
-        Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\absentReasons.csv")); //move else where later
+
+    }
+    @FXML
+    public void OpenFile(ActionEvent event) throws IOException {
+        Desktop.getDesktop().open(new File("C:\\Users\\kiere\\Documents\\S\\attendance_info.csv")); //move else where later
     }
 
     public void Teacherchangepassword(ActionEvent event){
@@ -460,6 +467,7 @@ public class Controller {
             }
         }
     }
+
     @FXML
     public void teacherStudentReset(ActionEvent event){
         ResetStudent.toFront();
